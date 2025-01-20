@@ -1,0 +1,43 @@
+/*--------------------------------------------------------------
+  7. CTA
+----------------------------------------------------------------*/
+.cs_cta.cs_style_1 {
+  background-color: $primary;
+  padding: 90px 40px 100px;
+  border-radius: 20px;
+  overflow: hidden;
+  @media (max-width: 991px) {
+    padding: 75px 25px 80px;
+  }
+
+  .cs_section_title {
+    margin-bottom: 15px;
+  }
+  .cs_section_heading {
+    margin-bottom: 35px;
+  }
+
+  .cs_section_subtitle {
+    color: $grey;
+    font-weight: 400;
+  }
+
+  .cs_cta_shape1,
+  .cs_cta_shape2 {
+    @media (max-width: 1199px) {
+      display: none;
+    }
+  }
+
+  .cs_cta_shape1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .cs_cta_shape2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}

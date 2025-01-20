@@ -1,0 +1,149 @@
+/*--------------------------------------------------------------
+18. Blog Details
+----------------------------------------------------------------*/
+
+.cs_sidebar_social_btn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: -4px;
+  margin-bottom: -5px;
+
+  a:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+
+.cs_post_details.cs_style_1 {
+  .cs_post_info {
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+  .cs_post_meta_wrap {
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.7em;
+    margin-bottom: 25px;
+
+    @media (max-width: 991px) {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .cs_post_thumb {
+    margin-bottom: 25px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  blockquote {
+    background: #f5faff;
+    margin: 0;
+    padding: 30px 40px 27px;
+    font-size: 24px;
+    line-height: 1.6em;
+    border-left: 5px solid $accent;
+    border-radius: 7px;
+    font-weight: 400;
+    margin: 30px 0;
+
+    small {
+      display: block;
+      line-height: inherit;
+      margin-top: 4px;
+      font-size: 16px;
+
+      span {
+        color: $accent;
+      }
+    }
+
+    @media (max-width: 991px) {
+      padding: 20px 20px 17px;
+      font-size: 20px;
+    }
+  }
+  .cs_post_meta {
+    gap: 10px;
+  }
+
+  h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    @media (max-width: 991px) {
+      font-size: 30px;
+    }
+    &.cs_post_title {
+      font-size: 50px;
+      margin-bottom: 20px;
+      @media (max-width: 575px) {
+        font-size: 36px;
+      }
+    }
+  }
+
+  img {
+    margin-bottom: 30px;
+    border-radius: 7px;
+    margin-top: 5px;
+  }
+
+  .embed_responsive {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+.cs_post_tage_list {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 500;
+
+  li {
+    margin-right: 5px;
+
+    &:not(:last-child):after {
+      content: ',';
+    }
+
+    a {
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}
+
+.cs_post_tages,
+.cs_post_share {
+  display: flex;
+
+  .cs_post_tage_title,
+  .cs_post_share_title {
+    margin: 0;
+    font-size: 16px;
+    margin-right: 10px;
+    line-height: 1.6em;
+  }
+}
+
+.cs_post_share_btn_list {
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}

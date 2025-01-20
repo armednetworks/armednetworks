@@ -1,0 +1,45 @@
+/*--------------------------------------------------------------
+>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1. Typography
+2. Preloader
+3. Spacing
+4. General
+5. Header
+6. Slider
+7. CTA
+8. Footer
+9. Comments
+10. Hero
+11. IconBox
+12. Pricing
+13. Testimonial
+14. Partners
+15. Accordian
+16. Post
+17. Contact
+18. Blog Details
+19. Modal
+20. Login
+--------------------------------------------------------------*/
+@import './default/variables';
+@import './default/typography';
+@import './common/preloader';
+@import './common/spacing';
+@import './common/general';
+@import './common/header';
+@import './common/slider';
+@import './common/cta';
+@import './common/footer';
+@import './common/comments';
+@import './shortcode/hero';
+@import './shortcode/iconbox';
+@import './shortcode/pricing';
+@import './shortcode/testimonial';
+@import './shortcode/partners';
+@import './shortcode/accordion';
+@import './shortcode/post';
+@import './shortcode/contact';
+@import './shortcode/post_details';
+@import './shortcode/modal';
+@import './shortcode/login';

@@ -1,0 +1,543 @@
+/*--------------------------------------------------------------
+  4. General
+----------------------------------------------------------------*/
+.cs_text_white {
+  color: $white;
+}
+
+.cs_text_primary {
+  color: $primary;
+}
+
+.cs_mp0 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cs_text_accent {
+  color: $accent;
+}
+
+.cs_text_accent2 {
+  color: $light_accent;
+}
+
+.cs_bg_accent {
+  background-color: $accent;
+}
+
+.cs_bg_primary {
+  background-color: $primary;
+}
+
+.cs_bg_white {
+  background-color: $white;
+}
+
+.cs_gap_y_30 {
+  gap: 30px 0;
+}
+
+.cs_gap_y_40 {
+  gap: 40px 0;
+}
+
+.cs_gradient_bg_1 {
+  background: linear-gradient(90deg,
+      #f8f8ff 0.81%,
+      rgba(248, 248, 255, 0) 100%);
+}
+
+.cs_gradient_bg_2 {
+  background: linear-gradient(90deg,
+      #f0fbf4 0.01%,
+      rgba(240, 251, 244, 0) 99.99%);
+}
+
+.cs_bg_filled {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cs_up_3_hover:hover {
+  transform: translateY(-3px);
+}
+
+.cs_light {
+  font-weight: 300;
+}
+
+.cs_normal {
+  font-weight: 400;
+}
+
+.cs_medium {
+  font-weight: 500;
+}
+
+.cs_semibold {
+  font-weight: 600;
+}
+
+.cs_bold {
+  font-weight: 700;
+}
+
+.cs_extra_bold {
+  font-weight: 800;
+}
+
+.cs_black {
+  font-weight: 900;
+}
+
+.cs_content {
+  position: relative;
+  background-color: $white;
+  z-index: 2;
+  overflow-x: hidden;
+
+  @media (max-width: 991px) {
+    margin-bottom: 0 !important;
+  }
+}
+
+#cs_backtotop {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $accent;
+  color: $white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: fixed;
+  right: 40px;
+  bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 4;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+  }
+}
+
+/*=============================
+ Common component design
+==============================*/
+.cs_section_heading.cs_style_1 {
+  @media (max-width: 991px) {
+    br {
+      display: none;
+    }
+  }
+
+  .cs_section_title {
+    font-size: 50px;
+    line-height: 1.3em;
+    position: relative;
+    z-index: 2;
+
+    @media (max-width: 1400px) {
+      font-size: 42px;
+    }
+
+    @media (max-width: 991px) {
+      font-size: 32px;
+    }
+  }
+
+  .cs_section_subtitle {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.6em;
+  }
+}
+
+.cs_section_heading.cs_style_2 {
+  .cs_section_subtitle {
+    display: inline-block;
+    position: relative;
+    font-weight: 600;
+    font-size: 18px;
+
+    &::after,
+    &::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      background: linear-gradient(270deg,
+          #d7c8c8 0%,
+          rgba(215, 200, 200, 0) 100%);
+      left: -55px;
+    }
+
+    &::after {
+      background: linear-gradient(90deg,
+          #d7c8c8 0%,
+          rgba(215, 200, 200, 0) 100%);
+      right: -55px;
+    }
+  }
+}
+
+.cs_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  padding: 12px 30px;
+  border-radius: 7px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  outline: none;
+  border: none;
+&.cs_type_1{
+  border-radius: 25px;
+}
+  @media (max-width: 390px) {
+    width: 100%;
+    justify-content: center;
+
+    &.cs_send {
+      width: auto;
+    }
+  }
+
+  &.cs_dark_hover {
+    &:hover {
+      color: $white;
+    }
+
+    &::after {
+      background-color: $primary;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: transform;
+    transition-duration: 0.7s;
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  }
+
+  &:hover {
+    color: $accent;
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.cs_btn_group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  &.cs_version_2 {
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 390px) {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.cs_btn.cs_bg_accent {
+  &::after {
+    background: $white;
+  }
+
+  &:hover {
+    color: $accent;
+  }
+
+  &.cs_dark_hover {
+    &:hover {
+      color: $white;
+    }
+
+    &::after {
+      background-color: $primary;
+    }
+  }
+}
+
+.cs_btn.cs_bg_white {
+  color: $primary;
+
+  &::after {
+    background: $accent;
+  }
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.cs_btn.cs_bg_primary {
+
+  &::after {
+    background: $white;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+
+  &.cs_dark_hover {
+    &:hover {
+      color: $white;
+    }
+
+    &::after {
+      background-color: $accent;
+    }
+  }
+}
+
+.cs_text_btn {
+  position: relative;
+  color: $primary;
+  font-weight: 500;
+  line-height: 1.75em;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+
+  svg {
+    position: absolute;
+    transition: inherit;
+
+    &:first-child {
+      transform: translate(0px, 25px);
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &:last-child {
+      transform: translate(7px, 9px);
+    }
+  }
+
+  &:hover {
+    color: $accent;
+
+    svg {
+      &:first-child {
+        transform: translate(7px, 9px);
+        visibility: visible;
+        opacity: 1;
+      }
+
+      &:last-child {
+        transform: translate(21px, -9px);
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.cs_business_feature {
+
+  .cs_featured_shape {position: absolute;
+    top: 300px;
+    right: 0;
+
+    @media (max-width: 1199px) {
+      display: none;
+    }
+  }
+}
+
+.cs_pr_45 {
+  padding-right: 45px;
+
+  @media (max-width: 1400px) {
+    padding-right: 0;
+  }
+}
+
+.cs_feature_thumb_1 {
+  width: calc(100% + 60px);
+  padding-left: 60px;
+
+  @media (max-width: 1400px) {
+    width: 100%;
+    padding-left: 0px;
+  }
+}
+
+.cs_list.cs_style_1 {
+  display: grid;
+  grid-gap: 25px 20px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px 20px;
+  }
+
+  li {
+    gap: 16px;
+    padding: 0px 0 0px 45px;
+    position: relative;
+
+    @media (max-width: 1400px) {
+      padding-left: 32px;
+    }
+  }
+
+  .cs_list_icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    @media (max-width: 1400px) {
+      top: 1px;
+    }
+
+    img {
+      width: 32px;
+
+      @media (max-width: 1400px) {
+        width: 24px;
+      }
+    }
+  }
+
+  .cs_list_text {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.524em;
+
+    @media (max-width: 1400px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.cs_section_shape_wrap_1 {
+
+  .cs_section_shape_1,
+  .cs_section_shape_2 {
+    @media (max-width: 1199px) {
+      display: none;
+    }
+  }
+
+  .cs_section_shape_1 {
+    top: 170px;
+    right: 0;
+  }
+
+  .cs_section_shape_2 {
+    top: 28%;
+    left: 12.4%;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* Start Review */
+.cs_rating_percentage,
+.cs_rating {
+  overflow: hidden;
+
+  &::before {
+    content: '\f005\f005\f005\f005\f005';
+    font-family: 'Font Awesome 6 Free';
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.cs_rating {
+  flex: none;
+  width: 126px;
+  height: 25px;
+  position: relative;
+  color: $accent;
+  font-size: 20px;
+  letter-spacing: 3px;
+
+  &::before {
+    font-weight: 400;
+  }
+}
+
+.cs_rating_percentage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+
+  &::before {
+    font-weight: 900;
+  }
+}
+
+/* End Review */
+.cs_post_meta_icon {
+  display: flex;
+}
+
+.cs_post_meta_wrap {
+  gap: 20px;
+}
+
+.cs_post_meta_wrap,
+.cs_post_meta {
+  display: flex;
+  align-items: center;
+}
+
+.cs_post_meta {
+  gap: 5px;
+}
+
+@media (max-width: 1199px) {
+  .cs_reverse_lg {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 991px) {
+  .cs_reverse_md {
+    flex-direction: column-reverse;
+  }
+}

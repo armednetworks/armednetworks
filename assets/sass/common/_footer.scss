@@ -1,0 +1,149 @@
+/*--------------------------------------------------------------
+8. Footer
+----------------------------------------------------------------*/
+.cs_site_footer {
+  background-color: $primary;
+
+  .cs_footer_widget_title {
+    color: $white;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.523em;
+    margin-bottom: 32px;
+
+    @media (max-width: 991px) {
+      margin-bottom: 15px;
+    }
+  }
+  .cs_social_btn.cs_style_1 {
+    gap: 10px;
+  
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      height: 35px;
+      width: 35px;
+      color: $white;
+      border: 1px solid $white;
+  
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
+
+.cs_main_footer {
+  position: relative;
+}
+
+.cs_footer_logo {
+  margin-bottom: 35px;
+
+  @media (max-width: 991px) {
+    margin-bottom: 15px;
+  }
+}
+
+
+.cs_footer_widget+.cs_footer_widget {
+  margin-top: 35px;
+}
+
+.cs_footer_widget_nav {
+  li {
+    margin-bottom: 13px;
+    transition: all 0.4s ease-in-out;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: $white;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+.cs_copyright_wrap {
+  background-color: $primary;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    opacity: 0.3;
+    background: $grey;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.cs_copyright_text {
+  padding: 20px 0;
+  border-top: 1px solid rgba($grey, 0.3);
+}
+
+.cs_newsletter {
+  &.cs_type_1{
+   .cs_form_field{
+    border-radius: 30px;
+   }
+  }
+  .cs_btn.cs_bg_accent {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    padding: 6px 20px;
+
+    &:hover {
+      color: $white;
+
+      &::after {
+        background-color: $light_accent;
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    width: 50%;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.cs_footer_shape1 {
+  position: absolute;
+  bottom: 140px;
+  right: 130px;
+
+  @media (max-width: 1199px) {
+    display: none;
+  }
+}
+
+.cs_sticky_footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+
+  @media (max-width: 991px) {
+    position: initial;
+  }
+}

@@ -1,0 +1,63 @@
+/*--------------------------------------------------------------
+  16. Post
+----------------------------------------------------------------*/
+.cs_post.cs_style_1 {
+  border-radius: 15px;
+  background: $white;
+  box-shadow: 0px 0px 10px 5px rgba(216, 216, 216, 0.5);
+  position: relative;
+  overflow: hidden;
+
+  .cs_post_title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+  .cs_post_content_in {
+    padding: 25px 30px 25px;
+    .cs_post_meta_wrap {
+      margin-bottom: 7px;
+    }
+  }
+
+  .cs_post_user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 30px;
+    position: relative;
+    background: rgba($grey, 0.1);
+  }
+
+  .cs_post_thumb {
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cs_posted_by {
+      width: 60px;
+      height: 60px;
+      background-color: $accent;
+      color: $white;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.223em;
+      position: absolute;
+      left: 35px;
+      top: 35px;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+}

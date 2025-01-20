@@ -1,0 +1,52 @@
+/*--------------------------------------------------------------
+  17. Contact
+----------------------------------------------------------------*/
+.cs_contact_thumb {
+  width: 50vw;
+  margin-left: calc(-50vw + 102.7%);
+  position: relative;
+  padding-right: 70px;
+
+  @media (max-width: 1399px) {
+    margin-left: calc(-50vw + 102.7%);
+    padding-right: 20px;
+  }
+  @media (max-width: 1199px) {
+    width: 100%;
+    margin-left: 0;
+    padding-right: 0px;
+    margin-bottom: 40px;
+  }
+
+  &::after {
+    content: '';
+    width: 164px;
+    height: 164px;
+    background-color: #8cacff;
+    filter: blur(175px);
+    position: absolute;
+    top: 0;
+    left: 180px;
+  }
+}
+
+.cs_form_field {
+  display: block;
+  width: 100%;
+  padding: 11px 20px;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+  border: 1px solid $grey;
+  resize: none;
+
+  &:focus {
+    border-color: $accent;
+  }
+}
+#cs_result {
+  font-size: 14px;
+  line-height: 1.6em;
+  margin-top: 5px;
+  color: $accent;
+}

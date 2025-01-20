@@ -1,0 +1,79 @@
+/*--------------------------------------------------------------
+19. Modal
+----------------------------------------------------------------*/
+.cs_modal {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.cs_modal_container {
+  width: 100%;
+  max-width: 1230px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: $white;
+
+  @media (max-width: 400px) {
+    padding: 30px 15px;
+  }
+}
+
+.cs_modal_in {
+  padding: 60px 20px 30px;
+}
+
+.cs_close_overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  cursor: zoom-out;
+  background-color: rgba(13, 12, 23, 0.9);
+  backdrop-filter: blur(5px);
+}
+
+.cs_close_modal {
+  padding: 0;
+  border: none;
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  background-color: #ff2d55;
+  color: $white;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: all 0.4s ease;
+  &:hover {
+    background-color: #b5b5b5;
+  }
+}
+
+.cs_modal_btn {
+  cursor: pointer;
+}
+.cs_modal.cs_size_sm {
+  .cs_modal_container {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    padding: 0;
+  }
+}

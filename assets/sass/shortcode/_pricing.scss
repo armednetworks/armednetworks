@@ -1,0 +1,233 @@
+/*--------------------------------------------------------------
+  12. Pricing
+----------------------------------------------------------------*/
+.cs_pricing_table.cs_style_1 {
+  border-radius: 15px;
+  background: $white;
+  box-shadow: 0px 0px 20px 5px rgba(216, 216, 216, 0.4);
+  padding: 40px;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+
+  @media (max-width: 1199px) {
+    padding: 40px 20px;
+  }
+&.cs_type_1{
+  .cs_pricing_btn{
+    border-radius: 25px;
+  }
+}
+  .cs_pricing_head {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+  }
+
+  .cs_pricing_badge {
+    position: absolute;
+    top: 35px;
+    right: -40px;
+    background-color: #e54800;
+    color: $white;
+    width: 192px;
+    padding: 5px 0;
+    transform: rotate(45deg);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .cs_pricing_head_title {
+    font-size: 30px;
+    line-height: 1.207em;
+    margin-bottom: 4px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .cs_pricing_head_subtitle {
+    transition: all 0.4s ease-in-out;
+  }
+
+  .cs_pricing_seperator {
+    width: 100%;
+    height: 1px;
+    opacity: 0.4;
+    background: $grey;
+    margin-bottom: 25px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .cs_price_value {
+    font-size: 38px;
+    line-height: 1.315em;
+    transition: all 0.4s ease-in-out;
+    margin-bottom: 20px;
+
+    small {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6em;
+      color: $secondary;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  .cs_pricing_feature_list {
+    padding-bottom: 35px;
+
+    li {
+      margin-bottom: 17px;
+      transition: all 0.4s ease-in-out;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    i {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      color: $white;
+      background-color: $accent;
+      font-size: 10px;
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      margin-right: 9px;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  .cs_pricing_icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: all 0.4s ease-in-out;
+
+    @media (max-width: 1199px) {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .cs_pricing_btn {
+    display: block;
+    color: $white;
+    text-align: center;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 10px;
+    background-color: $accent;
+    transition: all 0.4s ease-in-out;
+  }
+
+  &:hover,
+  &.active {
+    background-color: $accent;
+
+    .cs_pricing_feature_list li,
+    .cs_price_value,
+    .cs_pricing_head_title,
+    .cs_pricing_head_subtitle,
+    small {
+      color: $white;
+    }
+
+    .cs_pricing_feature_list li i,
+    .cs_pricing_btn,
+    .cs_pricing_seperator,
+    .cs_pricing_icon {
+      background-color: $white;
+      color: $primary;
+    }
+  }
+}
+
+/*---------------------------------------------------------------
+Pricing controller 
+----------------------------------------------------------------*/
+.cs_tab {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.cs_pricing_control {
+  list-style: none;
+  font-size: 20px;
+  line-height: 1.6em;
+  margin-bottom: 60px;
+
+  li {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &:last-child {
+      a {
+        &::before {
+          left: initial;
+          right: 100%;
+        }
+      }
+    }
+
+    &.active {
+      .cs_switch {
+        &::before {
+          left: 2px;
+        }
+      }
+
+      >a {
+        color: $accent;
+      }
+    }
+  }
+
+  .cs_switch {
+    display: inline-block;
+    position: relative;
+    height: 26px;
+    width: 60px;
+    background: $red;
+    border: 1px solid $red;
+    border-radius: 25px;
+    margin: 0 25px;
+
+    &::before {
+      content: '';
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background-color: $white;
+      position: absolute;
+      top: 50%;
+      left: 37px;
+      transform: translateY(-50%);
+      transition: all 0.4s ease;
+    }
+  }
+
+  a {
+    position: relative;
+
+    &::before {
+      content: '';
+      height: 24px;
+      width: 52px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 100%;
+      z-index: 1;
+    }
+  }
+}

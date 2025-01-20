@@ -1,0 +1,110 @@
+/*--------------------------------------------------------------
+15. Accordian
+----------------------------------------------------------------*/
+.cs_accordian {
+  margin-bottom: 25px;
+  border-radius: 10px;
+  border: 1px solid $grey;
+  background: $white;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .cs_accordian_toggle {
+    position: absolute;
+    top: 45px;
+    left: calc(100% - 45px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    @media (max-width: 991px) {
+      top: 33px;
+      left: initial;
+      right: 15px;
+    }
+
+    span {
+      position: relative;
+      display: inline-block;
+      height: 2px;
+      width: 14px;
+      background-color: $primary;
+
+      &::after {
+        content: '';
+        height: 2px;
+        width: 14px;
+        background-color: $primary;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(90deg);
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  .cs_accordian_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.524em;
+    padding: 30px 50px 30px 30px;
+    cursor: pointer;
+    margin-bottom: 0;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    @media (max-width: 991px) {
+      font-size: 18px;
+      padding: 20px 40px 20px 20px;
+    }
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  .cs_accordian_body {
+    padding: 0px 30px 30px 30px;
+    margin-top: -5px;
+    @media (max-width: 991px) {
+      padding: 0px 20px 20px 20px;
+      margin-top: -2px;
+    }
+  }
+
+  &.active {
+    .cs_accordian_title {
+      padding-bottom: 15px;
+    }
+
+    .cs_accordian_toggle span::after {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}
+
+.cs_faq_shape1 {
+  width: 162px;
+  height: 162px;
+  background-color: $light_accent;
+  filter: blur(175px);
+  position: absolute;
+  top: 4%;
+  left: 10%;
+}
+
+.cs_faq_shape2 {
+  width: 162px;
+  height: 162px;
+  background-color: $light_blue;
+  filter: blur(175px);
+  position: absolute;
+  top: 45%;
+  right: 10%;
+}
